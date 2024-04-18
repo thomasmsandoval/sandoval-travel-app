@@ -1,6 +1,6 @@
 class TripsController < ApplicationController
   def index
-    @trips = Trip.all.order(:id)
-    render json: trips
+    @trips = Trip.all
+    render :index
   end
 end

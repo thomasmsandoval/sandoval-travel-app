@@ -1,6 +1,6 @@
 User.create!([
-  { name: "Bob", email: "bob@test.com", password_digest: "password", image_url: "https://i.redd.it/tmw8hpbcll791.jpg" },
-  { name: "Rick", email: "rick@test.com", password_digest: "password", image_url: "https://static.tvtropes.org/pmwiki/pub/images/abcb6534_7913_4eb1_a7a5_62b081ebc628.png" },
+  { name: "Bob", email: "bob@test.com", password: "password", image_url: "https://i.redd.it/tmw8hpbcll791.jpg" },
+  { name: "Rick", email: "rick@test.com", password: "password", image_url: "https://static.tvtropes.org/pmwiki/pub/images/abcb6534_7913_4eb1_a7a5_62b081ebc628.png" },
 ])
 Trip.create!([
   { user_id: 1, title: "Orlando", image_url: "https://dhltravel.com/wp-content/uploads/2022/05/4899_wdw_50th_beacons_1920x1080_18ce18fd-a6a9-4bdc-98a2-db0882347d51.jpeg", start_time: nil, end_time: nil },
