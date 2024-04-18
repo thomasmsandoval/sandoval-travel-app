@@ -16,8 +16,8 @@ class TripsController < ApplicationController
   end
 
   def show
-    @trip = Trip.find_by(id: params[:id])
-    render :show
+    @trip = Trip.includes(:places).find_by(id: params[:id])
+    render json: @trip, include: :places
   end
 
   def update
