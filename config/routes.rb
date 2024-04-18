@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   post "/trips" => "trips#create"
   post "/places" => "places#create"
   patch "/trips" => "trips#update"
+  delete "/trips" => "trips#destroy"
 
   # Defines the root path route ("/")
   # root "posts#index"
