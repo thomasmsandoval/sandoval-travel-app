@@ -1,12 +1,18 @@
 class PlacesController < ApplicationController
   def create
-    @trip = current_user.trips.find(params[:trip_id])
-    @place = @trip.places.new(place_params)
-
-    if @place.save
-      render json: { message: "Place successfully created." }, status: :created
+    @place = Place.create(
+      trip_id: params[:trip_id],
+      address: params[:address],
+      name: params[:name],
+      description: params[:description],
+      image_url: params[:image_url],
+      start_time: params[:start_time],
+      end_time: params[:end_time],
+    )
+    if @place.valid?
+      render :show
     else
-      render json: { errors: place.errors.full_messages }, status: :bad_request
+      render json: { errors: @place.errors.full_messages }, status: 422
     end
   end
 end
