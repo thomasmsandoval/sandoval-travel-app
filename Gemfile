@@ -46,6 +46,7 @@ gem "bootsnap", require: false
 gem "seed_dump"
 gem "jwt"
 gem "datetime_picker_rails", "~> 0.0.7"
+gem "bcrypt", "~> 3.1", ">= 3.1.12"
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]

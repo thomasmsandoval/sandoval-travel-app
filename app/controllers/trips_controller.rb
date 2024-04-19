@@ -1,12 +1,13 @@
 class TripsController < ApplicationController
   def index
+    pp current_user
     @trips = Trip.all
     render :index
   end
 
   def create
     @trip = Trip.create(
-      user_id: params[:user_id],
+      user_id: current_user.id,
       title: params[:title],
       image_url: params[:image_url],
       start_time: params[:start_time],

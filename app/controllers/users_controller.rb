@@ -3,7 +3,8 @@ class UsersController < ApplicationController
     user = User.new(
       name: params[:name],
       email: params[:email],
-      password_digest: params[:password],
+      password: params[:password],
+      password_confirmation: params[:password_confirmation],
       image_url: params[:image_url],
     )
     if user.save
