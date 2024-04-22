@@ -24,7 +24,7 @@ class TripsController < ApplicationController
   def update
     @trip = Trip.find_by(id: params[:id])
     @trip.update(
-      user_id: params[:user_id] || @trip.user_id,
+      # user_id: params[:user_id] || @trip.user_id,
       title: params[:title] || @trip.title,
       image_url: params[:image_url] || @trip.image_url,
       start_time: params[:start_time] || @trip.start_time,

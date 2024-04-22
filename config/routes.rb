@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   get "/trips/:id" => "trips#show"
   post "/trips" => "trips#create"
   post "/places" => "places#create"
-  patch "/trips" => "trips#update"
-  delete "/trips" => "trips#destroy"
+  patch "/trips/:id" => "trips#update"
+  delete "/trips/:id" => "trips#destroy"
 
   # Defines the root path route ("/")
   # root "posts#index"
