@@ -1,4 +1,5 @@
 json.trip_id place.trip_id 
+
 json.address place.address
 json.name place.name
 json.description place.description

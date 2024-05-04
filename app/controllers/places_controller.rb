@@ -1,4 +1,10 @@
 class PlacesController < ApplicationController
+  def index
+    pp current_user
+    @places = Place.all
+    render :index
+  end
+
   def create
     @place = Place.create(
       trip_id: params[:trip_id],
@@ -14,5 +20,18 @@ class PlacesController < ApplicationController
     else
       render json: { errors: @place.errors.full_messages }, status: 422
     end
+  end
+
+  def show
+    @place = Place.find_by(id: params[:id])
+    render json: @place
+  end
+
+  def index_by_trip
+    trip = Trip.find(params[:trip_id])
+    places = trip.places
+    render json: places
+  rescue ActiveRecord::RecordNotFound
+    render json: { error: "Trip not found" }, status: :not_found
   end
 end
